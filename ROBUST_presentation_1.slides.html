@@ -13253,13 +13253,13 @@ a.anchor-link {
 <li>Reliability</li>
 <li>Robustness to <em> adversarial examples</em><ul>
 <li>Perturbations of their inputs, intending to fool the classifier</li>
-<li>Vulnerability to imperceptible variations crafted to mislead the models</li>
+<li>Vulnerability to imperceptible variations <strong>crafted to mislead the models</strong></li>
 </ul>
 </li>
 </ul>
 <p><img width="500" src="https://languagelog.ldc.upenn.edu/myl/adversarial-example.png"></p>
 <ul>
-<li>How...<ul>
+<li><strong>How...</strong><ul>
 <li>...are these pertubations crafted?</li>
 <li>...can we create robust classifier?</li>
 </ul>
@@ -13305,7 +13305,7 @@ where $\alpha$ is some step size, and we repeat this process for different minib
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Creating-an-adversarial-example">Creating an adversarial example<a class="anchor-link" href="#Creating-an-adversarial-example">&#182;</a></h2><ul>
-<li><p>Adjust image to <em>maximize</em> loss ISO $\theta$ with the gradient $\nabla_\theta \ell(h_\theta(x_i), y_i)$</p>
+<li><p><strong>Adjust image</strong> to <em>maximize</em> loss iso $\theta$ with the gradient $\nabla_\theta \ell(h_\theta(x_i), y_i)$</p>
 <ul>
 <li><p>Solve the optimization problem
 \begin{equation}
@@ -13323,7 +13323,7 @@ where $\hat{x}$ denotes our adversarial example attempting to maximize the loss.
 with $\Delta$ a set of perturbations (that makes $x + \tau$ sufficiently close to $x$)</li>
 </ul>
 </li>
-<li><p>Characterizing the "correct" set of allowable perturbations:</p>
+<li><p>Characterizing the "correct" set of <strong>allowable perturbations</strong>:</p>
 <ul>
 <li>$\Delta$: anything that humans visually feel to be the "same" as $x$</li>
 <li>reasonable choice, is the $\ell_\infty$ ball, defined by the set
@@ -13335,7 +13335,7 @@ where the $\ell_\infty$ norm a vector $z$ is defined as
 \|z\|_\infty = \max_i |z_i|
 \end{equation}</li>
 <li>allow perturbation to have magnitude $[-\epsilon, \epsilon]$ in each of its components</li>
-<li>(ensure that $x + \delta$ is $[0,1]$ bounded so that it is still a valid image)</li>
+<li><strong>(ensure that $x + \delta$ is $[0,1]$ bounded so that it is still a valid image)</strong></li>
 </ul>
 </li>
 </ul>
@@ -13346,7 +13346,7 @@ where the $\ell_\infty$ norm a vector $z$ is defined as
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Binary-classification">Binary classification<a class="anchor-link" href="#Binary-classification">&#182;</a></h2><p>Simplified problem where $h_\theta$ is a linear classifier and k=2 (binary classification)<br></p>
+<h2 id="Binary-classification">Binary classification<a class="anchor-link" href="#Binary-classification">&#182;</a></h2><p><strong>Simplified problem</strong> where $h_\theta$ is a linear classifier and k=2 (binary classification)<br></p>
 <p>Binary cross entropy (logistic loss) iso multi-class cross entropy loss<br></p>
 <ul>
 <li>hypothesis function
@@ -13386,7 +13386,7 @@ p(y=+1|x) = \frac{1}{1 + \exp(-h_\theta(x))}
 \end{equation}</li>
 </ul>
 <ul>
-<li>Solve this maximization problem exactly:<ul>
+<li>Solve this maximization problem <strong>exactly</strong>:<ul>
 <li>function monotonic decreasing hence</li>
 <li>maximize function applied to a scalar: minimizing the scalar quantity</li>
 <li>\begin{equation}
@@ -13424,7 +13424,7 @@ by distributing out the linear terms, hence</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="How-well-traditional-linear-models-might-work-against-adversarial-examples?">How well traditional linear models might work against adversarial examples?<a class="anchor-link" href="#How-well-traditional-linear-models-might-work-against-adversarial-examples?">&#182;</a></h3><ol>
-<li>Define and train with gradient descent a linear model using the PyTorch and MNIST</li>
+<li>Define and train with gradient descent a linear model using the PyTorch and <strong>MNIST</strong></li>
 <li>Evaluate the model on the train and test dataset</li>
 <li>Test set<ol>
 <li>Create adversarial pertubation on the images of the test set and </li>
@@ -13465,7 +13465,7 @@ by distributing out the linear terms, hence</li>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Define-and-train-with-gradient-descent-a-linear-model">Define and train with gradient descent a linear model<a class="anchor-link" href="#Define-and-train-with-gradient-descent-a-linear-model">&#182;</a></h4>
+<h4 id="Define-and-train-with-gradient-descent-a-linear-model">Define and train with gradient descent a <strong>linear model</strong><a class="anchor-link" href="#Define-and-train-with-gradient-descent-a-linear-model">&#182;</a></h4>
 </div>
 </div>
 </div><aside class="notes">
@@ -13520,10 +13520,10 @@ Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./dat
 
  
  
-<div id="791d4a4a-5d36-4a9c-aaac-87417ad6ad92"></div>
+<div id="59500e31-19c2-4625-af89-4b7838d04433"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#791d4a4a-5d36-4a9c-aaac-87417ad6ad92');
+var element = $('#59500e31-19c2-4625-af89-4b7838d04433');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "775cfbc3ad5a4ef19bbf3b8f1d4f2642", "version_major": 2, "version_minor": 0}
@@ -13556,10 +13556,10 @@ Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./dat
 
  
  
-<div id="cc93f6ca-ea99-45fa-aa44-4e8c17eb2349"></div>
+<div id="0366c7f7-4ea8-48bb-9f29-f369b3aa7f44"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#cc93f6ca-ea99-45fa-aa44-4e8c17eb2349');
+var element = $('#0366c7f7-4ea8-48bb-9f29-f369b3aa7f44');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "06532941b8da496cb8ff56d4bd2a1a0e", "version_major": 2, "version_minor": 0}
@@ -13592,10 +13592,10 @@ Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./data
 
  
  
-<div id="49b12899-e3c5-4a30-bdb5-f830d6550113"></div>
+<div id="02c674a8-4855-4df4-8dbd-495fe60af7a1"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#49b12899-e3c5-4a30-bdb5-f830d6550113');
+var element = $('#02c674a8-4855-4df4-8dbd-495fe60af7a1');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "a54fef441e8c4d04b63c118fadc4ab4f", "version_major": 2, "version_minor": 0}
@@ -13628,10 +13628,10 @@ Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./data
 
  
  
-<div id="feed9488-4ebd-481c-a9b3-aa77f443c206"></div>
+<div id="424b9bce-b049-4036-bb1d-c559802bea53"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#feed9488-4ebd-481c-a9b3-aa77f443c206');
+var element = $('#424b9bce-b049-4036-bb1d-c559802bea53');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "c3c41fd85d6744c98e1890073f4a81ec", "version_major": 2, "version_minor": 0}
@@ -14093,18 +14093,17 @@ tensor(0.0064, grad_fn=&lt;BinaryCrossEntropyWithLogitsBackward0&gt;)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Considered imperceptible for a human<br></p>
 <ul>
-<li>Slightly harder to recognize to image<br></li>
-<li>Attack variation ressembles an MNIST class<br><ul>
+<li>Attack variation slightly ressembles an MNIST class<br><ul>
 <li>Confuses the class 1 with the class 0<br></li>
-<li>Ensure that  x+δ is bounded between [0,1] so that it is still a valid image<br></li>
+<li>Ensure that  x+δ is bounded between [0,1] so that it is still a valid image<br>
+Epsilon doesn't affect much how a human would recognize the image<br>
+Accuracy from more than <strong>99% to 36%</strong></li>
 </ul>
 </li>
-<li>Epsilon doesn't affect much how a human would recognize the image<br></li>
-<li>Considered imperceptible for a human<br></li>
-<li>Accuracy from more than 99% to 36%</li>
 </ul>
-<p>Traditional linear models don't work to prevent adversarial examples.</p>
+<p><strong>Traditional linear models don't work to prevent adversarial examples.</strong></p>
 
 </div>
 </div>

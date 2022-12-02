@@ -13392,7 +13392,71 @@ in the whole data vs in the partitions created</li>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Basic-Approches-:-K-Anonymity-+-L-Diversity-+-T-Closeness"><a href="https://neohack22.github.io/iasd.github.io//PRIVACY_Notebook_4_Basic_Approaches_kAnonymity_lDiversity_tCloseness.slides.html">Basic Approches : K-Anonymity + L-Diversity + T-Closeness</a><a class="anchor-link" href="#Basic-Approches-:-K-Anonymity-+-L-Diversity-+-T-Closeness">&#182;</a></h3>
+<h1 id="Differential-Privacy-(DP)">Differential Privacy (DP)<a class="anchor-link" href="#Differential-Privacy-(DP)">&#182;</a></h1>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Amazon, Facebook, Apple use differential privacy to protect customers privacy</strong></p>
+<p><strong><em>What is DP ?</em></strong>
+An ϵ differentially private Algorithm applied on 2 close datasets will produce statistically indistinguishable outputs (ϵ describes how much information is leaked)
+In other words an attacker will learn nothing more from a client for example in a dataset if it’s present than if it’s absent</p>
+<p><strong><em>How does it work ?</em></strong>
+The level of Privacy is the result of a trade off<br>
+Noise is randomly introduced to protect privacy</p>
+<p><strong>=&gt; The higher  ϵ is set, the lower the privacy 
+and the easier it’s to deduce information</strong></p>
+<p><strong>=&gt; The lower ϵ is set, the higher the privacy</strong></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:blue"> <strong>Using randomized response</strong></p>
+<ul>
+<li>randomly replacing a boolean value with probability p and then choose the replacing value ( 0 with probability q, 1 with 1-q) </li>
+<li>we thenϵ can get ϵ =-ln(pq)
+  ϵ tends to 0 when pq is 1</li>
+<li>we can then compute a differentially private data with this scheme</li>
+<li>if we build an estimator of p, using the DP data, we notice that we are getting close to the original frequency</li>
+<li>Indeed if we average our 500 calculations, we are meeting a gaussian  distribution with our estimated parameters (p and variance)</li>
+</ul>
+<p><span style="color:red"> <strong>Comments</strong><br>
+<span style="color:red"> Data is protected and can be used!!!!<strong><br>
+<span style="color:red"> Using an alternative scheme with p only will always produce higher values of ϵ</strong></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span style="color:blue"> <strong>Using the Laplace mechanism on the numerical data</strong></p>
+<ul>
+<li>Consists in adding to each value of the dataset a random value from a Laplace distribution 
+with scale ϵ/ (max-min)</li>
+<li>Is ϵ differentially private</li>
+<li>Applied  to our dataset with ϵ=1, the noise looks small and is not linked to it<br>
+and the mean before and after DP is quite close (there are positive and negative noises)</li>
+</ul>
+<p><span style="color:red"><strong>Comments</strong></p>
+<ul>
+<li><strong>The data is protected and can be used</strong>      </li>
+<li><strong>he noise is bounded and does not depend on the value itself</strong><br>
+<strong>(analysis on 100 values)</strong>    </li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case-Study---Health-Care-dataset"><a href="https://neohack22.github.io/iasd.github.io/PRIVACY_presentation_6_Case_Study.slides.html">Case Study - Health Care dataset</a><a class="anchor-link" href="#Case-Study---Health-Care-dataset">&#182;</a></h3>
 </div>
 </div>
 </div></section></section>

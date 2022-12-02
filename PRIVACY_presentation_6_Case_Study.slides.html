@@ -13242,18 +13242,18 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Case-Study---Health-Care-dataset">Case Study - Health Care dataset<a class="anchor-link" href="#Case-Study---Health-Care-dataset">&#182;</a></h1><p>Data privacy on a new dataset.</p>
-<p>Health care provider</p>
-<p>"Machine learning" on this dataset</p>
+<h1 id="Case-Study---Health-Care-dataset">Case Study - Health Care dataset<a class="anchor-link" href="#Case-Study---Health-Care-dataset">&#182;</a></h1><p>Data privacy on a new dataset<br>
+Health care provider<br>
+"Machine learning" on this dataset</p>
 <ul>
 <li>To predict the <strong>has_diabetes</strong> according to the features at hand</li>
-<li><p>To figure out if there are preventative measures that can be taken</p>
+<li><p>To figure out if there are <strong>preventive measures</strong> that can be taken</p>
 <ul>
-<li>so fewer patients are seen in the hospital for related care or </li>
-<li>so that their visits are shorter</li>
+<li>so <strong>fewer</strong> patients are seen in the hospital for related care or </li>
+<li>so that their visits are <strong>shorter</strong></li>
 </ul>
 </li>
-<li><p>More potentially affected patients given access to</p>
+<li><p>More potentially <strong>affected patients</strong> given access to</p>
 <ul>
 <li>primary care physicians and regular medication or </li>
 <li>visits that can keep them out of the hospital for long stays</li>
@@ -13464,7 +13464,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The data is complete as there are no null value nor missing value.</p>
+<p>The data is <strong>complete</strong> as there are no null value nor missing value.</p>
 
 </div>
 </div>
@@ -13541,7 +13541,7 @@ symptom_code
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Medically related potential sentive columns:</p>
+<p><strong>Medically related</strong> potential sentive columns:</p>
 <ul>
 <li>admitted_ts, </li>
 <li>ambulance_call, </li>
@@ -13556,8 +13556,8 @@ symptom_code
 <li>released_sameday and</li>
 <li>symptom_code<br></li>
 </ul>
-<p>Potential sensitive: no_primary_dr<br></p>
-<p>Personal identifiable or quasi identifiable:</p>
+<p><strong>Potential</strong> sensitive: no_primary_dr<br></p>
+<p><strong>Personal</strong> identifiable or quasi identifiable:</p>
 <ul>
 <li>id, </li>
 <li>patient_name and </li>
@@ -13577,7 +13577,7 @@ symptom_code
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We're going to analyze principal components of a predictive model in order to evaluate potential usefull features.<br>
+<p>We're going to <strong>analyze principal components</strong> of a predictive model in order to evaluate potential usefull features.<br>
 To do so, we're start fitting a baseline model just to fit correlation between the target and the rest of the features.</p>
 
 </div>
@@ -13643,8 +13643,8 @@ memory usage: 133.9+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's check correlations to focus on useful data.<br>
-To do so, we would numerical columns so let's do the necessary transformations..</p>
+<p>Let's check <strong>correlations</strong> to focus on useful data.<br>
+To do so, we would <strong>numerical</strong> columns so let's do the necessary transformations..</p>
 
 </div>
 </div>
@@ -14274,7 +14274,7 @@ Indeed if there's a strong correlation between the principal component and an or
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The first principal component is crucial as it explains more than 98% of the variance in the dataset.<br>
+<p>The first principal component is crucial as it explains more than <strong>98% of the variance</strong> in the dataset.<br>
 So let's visualize the correlations between all of the input features and the first principal component.</p>
 
 </div>
@@ -14347,7 +14347,7 @@ So let's visualize the correlations between all of the input features and the fi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="What-columns-should-we-use?">What columns should we use?<a class="anchor-link" href="#What-columns-should-we-use?">&#182;</a></h3>
+<h3 id="Columns-to-use">Columns to use<a class="anchor-link" href="#Columns-to-use">&#182;</a></h3>
 </div>
 </div>
 </div></section><section>
@@ -14360,7 +14360,7 @@ So let's visualize the correlations between all of the input features and the fi
 <li>days_since_last_visit,</li>
 <li>age and symptom_code.<br></li>
 </ul>
-<p>Those feature make indeed sense from our understanding of diabetes.</p>
+<p>Those feature <strong>make indeed sense</strong> from our understanding of diabetes.</p>
 
 </div>
 </div>
@@ -14368,14 +14368,14 @@ So let's visualize the correlations between all of the input features and the fi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Which-ones-should-we-remove?">Which ones should we remove?<a class="anchor-link" href="#Which-ones-should-we-remove?">&#182;</a></h3>
+<h3 id="Columns-to-remove">Columns to remove<a class="anchor-link" href="#Columns-to-remove">&#182;</a></h3>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We should remove the unique identifiers that can cause leakage and identify a person:</p>
+<p>We should remove the <strong>unique identifiers</strong> that can cause leakage and identify a person:</p>
 <ul>
 <li>id,</li>
 <li>ssn,</li>
@@ -14388,14 +14388,14 @@ So let's visualize the correlations between all of the input features and the fi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Are-there-columns-which-we-should-protect-but-not-remove?">Are there columns which we should protect but not remove?<a class="anchor-link" href="#Are-there-columns-which-we-should-protect-but-not-remove?">&#182;</a></h3>
+<h3 id="Columns-to-protect">Columns to protect<a class="anchor-link" href="#Columns-to-protect">&#182;</a></h3>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The potential sensitive medical columns correlated should be protected:</p>
+<p>The potential sensitive <strong>medical</strong> columns correlated should be protected:</p>
 <ul>
 <li>ambulance_call,</li>
 <li>blood_sugar_reading,</li>
@@ -14434,7 +14434,7 @@ So let's visualize the correlations between all of the input features and the fi
 <ul>
 <li>remove personal information</li>
 <li>protect sensitive information</li>
-<li>send only the most correlated data first</li>
+<li>send only the <strong>most relevant data first</strong></li>
 </ul>
 
 </div>
@@ -14451,7 +14451,7 @@ So let's visualize the correlations between all of the input features and the fi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have considered potential data leakage within non-sensitive columns but the riskier leakage came from id (sensitive), as it's a unique value that can cause overfitting.</p>
+<p>We have considered potential data leakage within non-sensitive columns but the riskier leakage came from id (sensitive), as it's a <strong>unique value</strong> that can cause overfitting.</p>
 
 </div>
 </div>
@@ -14469,7 +14469,7 @@ So let's visualize the correlations between all of the input features and the fi
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The dataset is not concerned by any other non medical sensitive or secret information such as salary or geolocation.
 <br>
-<code>hospital</code> could have been discussed but as it's medical, it has already been taken into account.</p>
+<strong><code>hospital</code></strong> could have been discussed but as it's medical, it has already been taken into account.</p>
 
 </div>
 </div>
@@ -15023,17 +15023,14 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Which</p>
+<p>Methods to chose,<br>
+Data to<br></p>
 <ul>
-<li>methods to chose,</li>
-<li>data to<ul>
 <li>remove,</li>
-<li>protect and at</li>
+<li>protect and at
+Step to implement it all.<br></li>
 </ul>
-</li>
-<li>step to implement it all.<br></li>
-</ul>
-<p>Laplace transformation</p>
+<p><strong>Laplace transformation</strong></p>
 <ul>
 <li>convenient for numeric data we were dealing with,</li>
 <li>reasonable tradeoff between<ul>
@@ -15043,7 +15040,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </li>
 <li>scalable.<br></li>
 </ul>
-<p>Removed all the data that wouldn't statistically have a significant impact on our model.<br></p>
+<p>Removed all the data that wouldn't statistically have a <strong>significant impact</strong> on our model.<br></p>
 <p>The questions helped track the steps where to transform data.</p>
 
 </div>
@@ -15060,7 +15057,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This might relate to real problems such as an hospital having to decide which data to duplicate from their production environment to their development environment within their datahub so that a data team could work with it for example.</p>
+<p>This might relate to real problems such as an hospital having to decide which data to duplicate from their <strong>production environment to their development</strong> environment within their datahub so that a data team could work with it for example.</p>
 
 </div>
 </div>
@@ -15269,7 +15266,7 @@ Name: has_diabetes, Length: 750, dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Same test accuracy score, no matter we use anonymized or non anonymized dataset.<br></p>
-<p>Introducing non protected features didn't change accuracy: dataset was correctly anonymized.<br></p>
+<p>Introducing non protected features didn't change accuracy: Laplace mechanism <strong>correctly anonymized</strong> the dataset.<br></p>
 
 </div>
 </div>
@@ -15279,12 +15276,12 @@ Name: has_diabetes, Length: 750, dtype: int64</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It confirms our conclusion at the previous notebooks:</p>
 <ul>
-<li>privacy increase can have either reduce or maintain accuracy</li>
+<li><strong>privacy increase can have either reduce or maintain accuracy</strong></li>
 </ul>
 <ul>
 <li><p>the accuracy of the model</p>
 <ul>
-<li><p>depends on the distribution of the features,</p>
+<li><p>depends on the privacy <strong>method</strong> and the distribution of the features,</p>
 </li>
 <li><p>not on the actual values</p>
 </li>

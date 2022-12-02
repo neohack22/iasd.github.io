@@ -13256,26 +13256,41 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>How does the training go on ?</strong></p>
+<p><strong>How does the training go on using CIFAR 10 dataset?</strong></p>
 <ul>
-<li>Introducing perturbation to attacked images</li>
-<li>We train a model with a loss function minimization including a PGD component</li>
-<li>We then search the most effective attack parameters of a PGD attack on our  model</li>
-<li>We finally train the model with those parameters</li>
+<li>We attack the model seeking the most effective parameters for a PGD attack</li>
 </ul>
 <p><strong>Results</strong></p>
 <ul>
-<li>Attacks will not succeed so much</li>
-<li><p>The “normal” accuracy will not be reached…</p>
-<blockquote><p><strong>Models get robust at the expense of accuracy</strong></p>
-<p><strong>Adversarial models require more training data [Schmit Santurkar Tsipras Talwar M 2018]</strong></p>
-</blockquote>
+<li>Training our conv model with non attacked images vs attacked images provides an accury of <strong>72%</strong> vs <strong>65%</strong></li>
+<li>Attacking our model using attacked images with parameters (epsilon =0.1, alfa=0.0005, iterrations=10) moves the accuracy from <strong>68%</strong> to <strong>4%</strong></li>
+<li>Training our conv model with such parameters leads to a final accuracy of <strong>17%</strong> </li>
+</ul>
+<p><strong>Conclusions</strong></p>
+<ul>
+<li>Training an adversarial model can improve its accuracy (from <strong>4 to 17%</strong> in our example)</li>
+<li><strong>Adversarial models require more training data [Schmit Santurkar Tsipras Talwar M 2018]</strong></li>
+<li><strong>We have to balance between accuracy and robustness</strong></li>
+</ul>
+<p><strong>Comments</strong>
+Attacks have better succes with smaller alpha values</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-of-different-norms?"><strong>Use of different norms?</strong><a class="anchor-link" href="#Use-of-different-norms?">&#182;</a></h2><ul>
+<li><p>We only used the ℓ∞ norm.</p>
+</li>
+<li><p>Related to the use of ℓ1 or ℓ2 norms, the litterature we would have expected:</p>
+<ul>
+<li>a use of larger <strong>epsilon values</strong> in the PGD, as the volume of ℓ1 and ℓ2 balls are much smaller compared to the ℓ∞   </li>
+<li>an occurence of localized image perturbations</li>
+</ul>
 </li>
 </ul>
-<p>epsilon…..alpha… iterations</p>
-<ul>
-<li><strong>A trade off</strong></li>
-</ul>
 
 </div>
 </div>
@@ -13283,29 +13298,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Building-a-robust-model-?">Building a robust model ?<a class="anchor-link" href="#Building-a-robust-model-?">&#182;</a></h2>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>How does the use of the norm influence the results ?</strong></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Privacy">Privacy<a class="anchor-link" href="#Privacy">&#182;</a></h1>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Massive-Data-Use-:-Use-Valuable-data-while-Protecting-Personal-and-Sensitive-Information">Massive Data Use : Use Valuable data while Protecting Personal and Sensitive Information<a class="anchor-link" href="#Massive-Data-Use-:-Use-Valuable-data-while-Protecting-Personal-and-Sensitive-Information">&#182;</a></h2>
+<h1 id="Privacy">Privacy<a class="anchor-link" href="#Privacy">&#182;</a></h1><h2 id="Massive-Data-Use-:-Use-Valuable-data-while-Protecting-Personal-and-Sensitive-Information">Massive Data Use : Use Valuable data while Protecting Personal and Sensitive Information<a class="anchor-link" href="#Massive-Data-Use-:-Use-Valuable-data-while-Protecting-Personal-and-Sensitive-Information">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13319,17 +13312,18 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Even non sensitive data combined in a dataset can be used as  super identifiers to get information about a sensitive attribute.Solutions have been imagined to replace data to protect them</strong></p>
+<p><strong>Even non sensitive data combined in a dataset can be used as  super identifiers to get information about a sensitive attribute.<br>
+Solutions have been imagined to replace data for protection.</strong></p>
 <ul>
-<li><p>K-anonymity aims to group at least k attributes items  by aggregating the quasi identifiers. Yet, if the grouped attributes are sharing the same sensitive data, the anonymization is not guaranteed</p>
+<li><p>K-anonymity aims to group at least k attributes items  by aggregating the quasi identifiers. Yet, if the grouped attributes are sharing the same sensitive data, the anonymization is not guaranteed.</p>
 </li>
-<li><p>Therefore, L-diversity was introduced as a complement. It introduces at least L different values of the sensitive data, among the K anomysed quasi-identifiers.Yet, with probabilistic reasoning we can learn information about the sensitive data.</p>
+<li><p>Therefore, L-diversity was introduced as a complement. It introduces at least L different values of the sensitive data, among the K anomysed quasi-identifiers. Still, with probabilistic reasoning, we could learn information about the sensitive data.</p>
 </li>
 </ul>
 <ul>
-<li>T-Closeness emerged then to ensure that a distribution of sensitive values in the k-anonymity groups is close to the whole distribution of sensitive values</li>
+<li>T-Closeness emerged then to ensure that a distribution of sensitive values in the k-anonymity groups is close to the whole distribution of sensitive values.</li>
 </ul>
-<p><span style="color:red"><strong>The anonymity is ensured, but the use of data can be limited even if we can still analyze trends and global metrics&lt;/red&gt;</strong></p>
+<p><span style="color:red"><strong>The anonymity is ensured, but the use of data can be limited even if we can still analyze trends and global metrics.&lt;/red&gt;</strong></p>
 
 </div>
 </div>
@@ -13339,14 +13333,14 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span style="color:blue"> <strong>Implementing the Mondrian greedy search algorithm</strong></p>
 <ul>
-<li>on a dataset where the sensitive attribute=income and feature columns=”age” and “hours per week “</li>
-<li>creates K-anonymity partitions (k=3)</li>
-<li>by creating smaller and smaller partitions</li>
-<li>attributes must be numerical or categorical </li>
-<li>the spam of columns is used to choose the column order to split : max-min for numerical/ number of values either</li>
-<li>The spit function splits a partition on a column into 2 partitions using the median  or the half of unique values</li>
-<li>If both partitions meet the k-anonymity criterion, we continue to split partitions until it’s possible using the feature fields</li>
-<li>Once it’s finished we will  aggregate data in each k anonymous group on feature fields using the mean for numerical values/union for categorical </li>
+<li>On a dataset where the sensitive attribute=income and feature columns=”age” and “hours per week “</li>
+<li>Creates K-anonymity partitions (k=3)</li>
+<li>By creating smaller and smaller partitions</li>
+<li>Attributes must be numerical or categorical </li>
+<li>The ordered columns span values are used to choose the column to be split: max-min for numerical/ number of values either</li>
+<li>The get_split function splits a column into 2 partitions using the median or the mean of unique values</li>
+<li>If both partitions meet the k-anonymity criterion, we continue to split partitions</li>
+<li>Once finished, we aggregate data in each k-anonymous group on selected fields, using the mean for numerical values/union for categorical ones</li>
 </ul>
 
 </div>
@@ -13357,17 +13351,17 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span style="color:blue"><strong>Implementing the Mondrian greedy search algorithm</strong></p>
 <ul>
-<li>we get 655 partitions that correspond to different groups of (“age”,”hours per week”) </li>
-<li>some partitions have been split and split again and other not </li>
-<li>Each groups counts at least 3 (k) people</li>
-<li>It’s difficult to deanonymize many partitions, yet small ones are at risk</li>
+<li>We get 655 partitions that correspond to different groups of (“age”,"hours per week”) </li>
+<li>Some partitions have been split and other not </li>
+<li>Each group counts at least 3 (k=3) people</li>
+<li>It’s harder to deanonymize bigger partitions than smaller ones</li>
 </ul>
 <p><span style="color:green"> <strong>Adding the L-Diversitiy (with L=2)</strong></p>
 <ul>
-<li><span style="color:green"> is obtained by adding a condition on the partition validation when creating it</li>
-<li><span style="color:green"> the number of unique values from a feature column in partition &gt;=2</li>
+<li><span style="color:green"> A condition is added on the partition validation at creation</li>
+<li><span style="color:green"> The number of unique values from a feature column in partition &gt;=2</li>
 <li><span style="color:green"> 390 partitions are emerging vs 655</li>
-<li><span style="color:green"> As we can see, for regions where the value diversity is low, our l-diverse method produces partitions that contain a very large number of entries for one value of the sensitive attribute and only one entry for the other value. This is not ideal as while there is "plausible deniability" for a person in the dataset </li>
+<li><span style="color:green"> For regions where the value diversity is low, l-diverse method produces partitions that contain a very large number of entries, for one value of the sensitive attribute but only one entry for the other value</li>
 </ul>
 
 </div>
@@ -13380,11 +13374,9 @@ a.anchor-link {
 <p><span style="color:green"> <strong>Adding the T-Closeness to K-Anonymity (in the validation of partition creation)</strong></p>
 <ul>
 <li>is obtained by measuring the distance between the empirical distribution of the sensitive feature
-in the whole data vs in the partitions created</li>
-<li>A 20% gap is authorized here</li>
+in the whole data vs in the partitions created.</li>
 </ul>
-<p><span style="color:green"> We get 260 partitions, T closeness is more demanding and efficient</p>
-<p><span style="color:green"> For example, we can not deduce anything from people younger than 37</p>
+<p><span style="color:green"> We get 260 partitions: T closeness is more demanding and efficient.</p>
 
 </div>
 </div>
@@ -13400,15 +13392,15 @@ in the whole data vs in the partitions created</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Amazon, Facebook, Apple use differential privacy to protect customers privacy</strong></p>
-<p><strong><em>What is DP ?</em></strong>
-An ϵ differentially private Algorithm applied on 2 close datasets will produce statistically indistinguishable outputs (ϵ describes how much information is leaked)
-In other words an attacker will learn nothing more from a client for example in a dataset if it’s present than if it’s absent</p>
-<p><strong><em>How does it work ?</em></strong>
-The level of Privacy is the result of a trade off<br>
-Noise is randomly introduced to protect privacy</p>
+<p><strong><em>What is DP ?</em></strong><br>
+An ϵ-differentially private Algorithm applied on 2 close datasets will produce statistically indistinguishable outputs (ϵ describes how much information is leaked).
+In other words an attacker will learn nothing from an addition in a dataset, of a new client for example.</p>
+<p><strong><em>How does it work ?</em></strong><br>
+The level of Privacy is the result of a trade off.
+Noise is randomly introduced to protect privacy.</p>
 <p><strong>=&gt; The higher  ϵ is set, the lower the privacy 
-and the easier it’s to deduce information</strong></p>
-<p><strong>=&gt; The lower ϵ is set, the higher the privacy</strong></p>
+and the easier it is to deduce information</strong></p>
+<p><strong>=&gt; The lower ϵ is set, the higher the privacy is</strong></p>
 
 </div>
 </div>
@@ -13418,16 +13410,14 @@ and the easier it’s to deduce information</strong></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span style="color:blue"> <strong>Using randomized response</strong></p>
 <ul>
-<li>randomly replacing a boolean value with probability p and then choose the replacing value ( 0 with probability q, 1 with 1-q) </li>
-<li>we thenϵ can get ϵ =-ln(pq)
-  ϵ tends to 0 when pq is 1</li>
-<li>we can then compute a differentially private data with this scheme</li>
-<li>if we build an estimator of p, using the DP data, we notice that we are getting close to the original frequency</li>
-<li>Indeed if we average our 500 calculations, we are meeting a gaussian  distribution with our estimated parameters (p and variance)</li>
+<li>We randomly replace a boolean value with probability p and then choose the replacing value (0 with probability q, 1 with 1-q) </li>
+<li>We then get ϵ =-ln(pq). ϵ = 0 when pq = 1.</li>
+<li>We can then compute a differentially private data with this scheme.</li>
+<li>If we build an estimator of p, using the DP data, we notice that we are getting close to the original frequency.</li>
+<li>Indeed if we average our 500 calculations, we are meeting a gaussian  distribution with our estimated parameters (p and variance).</li>
 </ul>
 <p><span style="color:red"> <strong>Comments</strong><br>
-<span style="color:red"> Data is protected and can be used!!!!<strong><br>
-<span style="color:red"> Using an alternative scheme with p only will always produce higher values of ϵ</strong></p>
+<span style="color:red"> Data is protected and can be used!</p>
 
 </div>
 </div>
@@ -13437,17 +13427,16 @@ and the easier it’s to deduce information</strong></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span style="color:blue"> <strong>Using the Laplace mechanism on the numerical data</strong></p>
 <ul>
-<li>Consists in adding to each value of the dataset a random value from a Laplace distribution 
-with scale ϵ/ (max-min)</li>
-<li>Is ϵ differentially private</li>
-<li>Applied  to our dataset with ϵ=1, the noise looks small and is not linked to it<br>
-and the mean before and after DP is quite close (there are positive and negative noises)</li>
+<li>consists in adding to each value of the dataset a random value from a Laplace distribution 
+with scale ϵ / (max-min) and</li>
+<li>is ϵ-differentially private.</li>
 </ul>
+<p>Applied  to our dataset with ϵ=1, the noise seems to be small.<br>
+The mean before and after DP is quite close (with positive and negative values).</p>
 <p><span style="color:red"><strong>Comments</strong></p>
 <ul>
 <li><strong>The data is protected and can be used</strong>      </li>
-<li><strong>he noise is bounded and does not depend on the value itself</strong><br>
-<strong>(analysis on 100 values)</strong>    </li>
+<li><strong>The noise is bounded and does not seem to depend on the feature's value itself (analysis on 100 values)</strong>    </li>
 </ul>
 
 </div>

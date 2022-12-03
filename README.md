@@ -20,4 +20,6 @@ Projet IA - IASD - Université Paris Dauphine : Abdoulaye DOUCOURE et Frédéric
 *************
 ## Sources
 [Privacy in Statistics and Machine Learning Spring 2021
-Lecture 5: Differential Privacy II](https://dpcourse.github.io/lecnotes-web/lec-06-exp-mech.pdf)
+Lecture 5: Differential Privacy II](https://dpcourse.github.io/lecnotes-web/lec-06-exp-mech.pdf)<br>
+[The Algorithmic Foundations
+of Differential Privacy](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf)

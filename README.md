@@ -16,3 +16,8 @@ Projet IA - IASD - Université Paris Dauphine : Abdoulaye DOUCOURE et Frédéric
 ### [Basic Approches : K-Anonymity + L-Diversity + T-Closeness](https://neohack22.github.io/iasd.github.io//PRIVACY_Notebook_4_Basic_Approaches_kAnonymity_lDiversity_tCloseness.slides.html)
 ### [Differential Privacy](https://neohack22.github.io/iasd.github.io/PRIVACY_Notebook_5_Differential_Privacy.slides.html)
 ### [Case Study - Health Care dataset](https://neohack22.github.io/iasd.github.io/PRIVACY_presentation_6_Case_Study.slides.html)
+
+*************
+## Sources
+[Privacy in Statistics and Machine Learning Spring 2021
+Lecture 5: Differential Privacy II](https://dpcourse.github.io/lecnotes-web/lec-06-exp-mech.pdf)
